@@ -19,7 +19,7 @@ class FilmsView(Resource):
         return movies_schema.dump(movie_service.get_all(genres_args, director_args, year_args)), 200
 
     def post(self):
-        req_json = json.load(request.json)
+        req_json = request.json
         movie_service.create(req_json)
         return "", 201
 
@@ -28,8 +28,8 @@ class FilmView(Resource):
     def get(self, fid):
         return movie_schema.dump(movie_service.get_one(fid)), 200
 
-    def put(self):
-        req_json = json.load(request.json)
+    def put(self, fid):
+        req_json = request.json
         movie_service.update(req_json)
         return "", 204
 

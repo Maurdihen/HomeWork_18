@@ -23,14 +23,14 @@ class MovieDao:
         movie = Movie(**data)
 
         self.session.add(movie)
-        self.session.commite()
+        self.session.commit()
 
         return movie
 
     def update(self, movie):
         self.session.add(movie)
-        self.session.commite()
+        self.session.commit()
 
     def delete(self, mid):
         self.session.delete(self.session.query(Movie).get(mid))
-        self.session.commite()
+        self.session.commit()
