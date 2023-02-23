@@ -2,7 +2,7 @@ from setup_db import db
 from marshmallow import Schema, fields
 
 class Movie(db.Model):
-    __tablename__ = "movie"
+    __tablename__ = 'movie'
     __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)

@@ -7,10 +7,10 @@ from service.movies_serv import MovieServise
 from setup_db import db
 
 movie_dao = MovieDao(db.session)
-movie_service = MovieServise(movie_dao)
+movie_service = MovieServise(dao=movie_dao)
 
 genre_dao = GenreDao(db.session)
-genre_service = GenreServise(genre_dao)
+genre_service = GenreServise(dao=genre_dao)
 
 director_dao = DirectorDao(db.session)
-director_service = DirectorServise(director_dao)
+director_service = DirectorServise(dao=director_dao)
